@@ -27,7 +27,6 @@ def save_album(pic_list, album_id):
     if not os.path.exists(dirname):
         os.mkdir(dirname)
     content = '\n'.join(pic_list)
-    print(content)
     with open(filepath, 'w')as f:
         f.write(content)
         f.flush()
@@ -57,8 +56,6 @@ def get_album_pic(album_id):
             print('登录信息无效，请更新！')
             exit()
         if len(photo_list) <= 0:
-            break
-        if page == 2:
             break
         for photo in photo_list:
             pic_url = (pic_format).format(pic_id=photo['pic_pid'])
