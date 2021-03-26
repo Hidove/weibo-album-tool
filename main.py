@@ -38,15 +38,14 @@ def get_albums(uid):
 
 
 def save_album(pic_list, album):
-
     filepath = os.getcwd() + '/pic_list/{uid}/{caption}_{album_id}.txt'.format(
         uid=album['uid'],
         caption=album['caption'],
         album_id=album['album_id'],
     )
-    dirname = os.path.dirname(filepath)
-    if not os.path.exists(dirname):
-        os.mkdir(dirname)
+    path_dirname = os.path.dirname(filepath)
+    if not os.path.exists(path_dirname):
+        os.makedirs(path_dirname)
     content = '\n'.join(pic_list)
     with open(filepath, 'w')as f:
         f.write(content)
@@ -87,6 +86,7 @@ def get_album_pic(uid, album2):
 
     print('相册【{album_id}】获取完毕'.format(album_id=album['album_id']))
     save_album(pic_list, album)
+
 
 for uid in uid_list:
     print('正在获取用户【{uid}】的相册'.format(uid=uid))
