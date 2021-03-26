@@ -1,16 +1,19 @@
 # 微博相册图片获取工具
 Author：李小恩
+
+## 演示图
+
+![](https://z3.ax1x.com/2021/03/26/6vYyT0.png)
+![](https://z3.ax1x.com/2021/03/26/6vYdSg.png)
+
 ## 使用
 
 打开`main.py`根据注释配置好对应信息即可
 以下是示例
 ```python
 # 新浪用户的uid
-uid = 1947117325
-# 相册id
-album_id_list = [
-    189229,
-    3558779514364152,
+uid_list = [
+    1947117325
 ]
 # 你的新浪账号cookie
 cookie = 'cookie'
